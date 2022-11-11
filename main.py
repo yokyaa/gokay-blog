@@ -158,7 +158,6 @@ def logout():
 
 
 @app.route("/post/<int:post_id>",methods=["GET","POST"])
-
 def show_post(post_id):
     requested_post = BlogPost.query.get(post_id)
     form = CommentForm()
@@ -168,7 +167,7 @@ def show_post(post_id):
             return redirect(url_for('login'))
 
         new_comment=Comment(
-            text=form.comment.data,
+            text=form.comment_text.data,
             comment_author=current_user,
             parent_post=requested_post,
 
