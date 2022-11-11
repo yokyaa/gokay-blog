@@ -166,7 +166,7 @@ def show_post(post_id):
             flash("You have to register to comment")
             return redirect(url_for('login'))
 
-        new_comment=Comment(
+        new_comment= Comment(
             text=form.comment_text.data,
             comment_author=current_user,
             parent_post=requested_post,
