@@ -16,12 +16,12 @@ import psycopg2
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('8eYkEfBA6O6donzWlSihBXox7C0sKR6b')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://eqymrguwcxxbkl:caca5c9186116941a8afa0f0060c3b37e6c43a1d521afeaa2b45c341750a2fa8@ec2-54-246-185-161.eu-west-1.compute.amazonaws.com:5432/d701sa4t1ak3r7"
+app.config['SQLALCHEMY_DATABASE_URI'] = "DATABASE_URL"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
